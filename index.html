@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>SiBuku - Manajemen Buku</title>
+  </head>
+  <body>
+    <h1>Selamat Datang di SiBuku</h1>
+    <h2>Tambah Buku Baru</h2>
+    <form id="newBookForm">
+      <input type="text" id="title" placeholder="Judul Buku" required /><br />
+      <textarea id="description" placeholder="Deskripsi" required></textarea
+      ><br />
+      <input type="text" id="author" placeholder="Pengarang" required /><br />
+      <input
+        type="number"
+        id="rating"
+        max="5"
+        placeholder="Rating"
+        required
+      /><br />
+      <input type="file" id="image" required /><br />
+      <button type="submit">Tambah Buku</button>
+    </form>
+    <div id="books"></div>
+
+    <div id="editBookModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Edit Buku</h2>
+        <form id="editBookForm" enctype="multipart/form-data">
+          <div>
+            <label for="editTitle">Judul Buku</label><br />
+            <input
+              type="text"
+              id="editTitle"
+              placeholder="Judul Buku"
+              name="title"
+              required
+            />
+          </div>
+          <br />
+          <div>
+            <label for="editDescription" style="display: block"
+              >Description</label
+            >
+            <textarea
+              id="editDescription"
+              placeholder="Deskripsi"
+              name="description"
+              rows="10"
+              required
+            ></textarea>
+          </div>
+          <br />
+          <div>
+            <label for="editAuthor">Author</label>
+            <input
+              type="text"
+              id="editAuthor"
+              placeholder="Pengarang"
+              name="author"
+              required
+            />
+          </div>
+          <br />
+          <div>
+            <label for="editRating">Rating</label>
+            <input
+              type="number"
+              id="editRating"
+              placeholder="Rating"
+              name="rating"
+              max="5"
+              required
+            />
+          </div>
+          <br />
+          <div>
+            <input
+              type="file"
+              id="editImage"
+              name="image"
+              style="display: none"
+            />
+          </div>
+          <br />
+          <button type="submit">Update Buku</button>
+          <button type="button" onclick="closeEditModal()">Cancel</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
